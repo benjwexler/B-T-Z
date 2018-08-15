@@ -213,14 +213,14 @@ border: 25px solid rgba(65, 110, 145, 0.324);
 
 #signInButton {
     position: absolute;
-    top: 700px;
-    left: 20px;
+    top: 0;
+    left: 0;
 }
 
 #signUpButton {
     position: absolute;
     top: 0;
-    left: 120px;
+    left: 100px;
 }
 
 
