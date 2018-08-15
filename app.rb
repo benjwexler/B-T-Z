@@ -1,15 +1,14 @@
 require 'sinatra'
 require 'sinatra/flash'
-require 'sinatra/reloader'
 require 'sinatra/activerecord'
 require './models/user.rb'
 require './models/video.rb'
 
 
 
-set :port, 9502
+# set :port, 9502
 
-set :database, {adapter: "postgresql", database: "producer_hub"}
+
 
 enable :sessions
 
