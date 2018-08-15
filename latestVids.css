@@ -75,9 +75,10 @@
     filter: blur(.5px);
     /* margin-top: 5%; */
     /* text-align: center; */
-    height: 30px;
-    border: .5px dashed black;
+    height: 40px;
+    /* border: .5px dashed black; */
     margin: 0 auto 0 auto;
+    font-size: 25px;
 }
 
 #row3 {
@@ -87,7 +88,7 @@
     /* margin-top: 5%; */
     /* text-align: center; */
     height: 300px;
-    border: .5px dashed black;
+    /* border: .5px dashed black; */
     /* margin-left: auto;
     margin-right: auto; */
     margin: 0 auto 0 auto;
@@ -236,11 +237,11 @@ border: 25px solid rgba(65, 110, 145, 0.324);
 
 }
 
-@media only screen and (max-width:375px) {
+/* @media only screen and (max-width:375px) {
     .h1, h1 {
         font-size: 0.5rem;
     }
-}
+} */
 
 #signInButton {
     position: absolute;
@@ -273,7 +274,24 @@ border: 25px solid rgba(65, 110, 145, 0.324);
 	top: 0;
 	left: 0;
 	width: 100%;
-    height: 60%;
-    
-    
+    height: 60%;  
+}
+
+#seperator {
+    border: 5px dashed black;
+}
+
+#footer {
+    background: black;
+    height: 80px;
+    margin-top: 80px;
+    /* position: absolute;
+    bottom: 0; */
+}
+
+.footsy {
+    text-align: center;
+    margin: auto;
+    color: white;
+    font-family: monospace;
 }
