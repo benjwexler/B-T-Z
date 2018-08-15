@@ -1,0 +1,14 @@
+<a href="/">Home</a>
+
+<form method="POST" action="/users/<%= @specific_user.id %>"> 
+
+    <input type="hidden" name="_method" value="PUT">
+    <%#This is a hidden field we add to trick our browser to send a put request since the browser only recognizes get/post%>
+    <span>New Password: <input type="password" name="password" placeholder="Enter password" value=""></span>
+    <input type="submit" value="Submit">
+</form>
+
+<form method="POST" action="/users/<%= @specific_user.id %>">
+    <input type="hidden" name="_method" value="DELETE">
+    <input type="submit" value="Delete <%= @specific_user.username %>">
+</form>

@@ -1,0 +1,16 @@
+<a href="/">Home</a>
+<a href="/videos/new">Add Video</a>
+Latest Submissions
+<% @videos.reverse.each do |single_video| %> 
+    <h1> <a href="/videos/<%=single_video.id%>"><%= single_video.song_name %> </a> </h1>
+    <h1> <%= single_video.artist_name %> </h1>
+    <h1> <%= single_video.producer_name %> </h1>
+    <h1> <%= single_video.genre %> </h1>
+
+
+
+    <iframe width="420" height="345" src="https://www.youtube.com/embed/<%=single_video.video_url%>"
+    frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+    </iframe>
+    <h1> Contributed by: <a href="/users/<%=single_video.user_id%>"> <%= User.find(single_video.user_id).username %> </a> </h1>
+<% end %>

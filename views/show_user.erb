@@ -1,0 +1,22 @@
+<a href="/">Home</a>
+
+<h3> User Name: <%=@specific_user.username %> </h3>
+<% @user_submissions.reverse.take(2).each do |column| %>
+    <h1> Song Name: <%= column.song_name %> </h1>
+    <h1> Artist Name: <%= column.artist_name %> </h1>
+    <h1> Producer Name: <%= column.producer_name %> </h1>
+    <h1> Genre: <%= column.genre %> </h1>
+    <iframe width="420" height="345" src="https://www.youtube.com/embed/<%=column.video_url%>"
+    frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+    </iframe>
+<% end %>
+
+
+<% if session[:user_id]== @specific_user.id %>
+<form action='/users/<%=@specific_user.id%>/edit'>
+    <input type="submit" value="Edit Info" />
+</form>
+<%end%>
+<form action='/users'>
+    <input type="submit" value="See all Users" />
+</form>
