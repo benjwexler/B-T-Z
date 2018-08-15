@@ -100,7 +100,7 @@
 }
 
 #test {
-    background: blue;
+    /* background: blue; */
     text-align: center;
     height: 600px;
     margin: auto;
