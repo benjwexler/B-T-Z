@@ -3,8 +3,15 @@
     background: black;
     z-index: -99;
 } */
+
+@keyframes blink-caret {
+    from, to { opacity: .99  }
+    50% { opacity: 1 }
+  }
+
 #header {
     background: black;
+    background: linear-gradient(to bottom right, black 77%, #00d7d7 58%);
     /* border: 10px dashed rgb(45, 114, 146); */
     text-align: center;
     height: 100px;
@@ -12,10 +19,23 @@
     font-family: 'Monoton', cursive;
     /* align-content: center; */
     color: rgb(0, 238, 255);
+    /* color: rgb(33, 136, 117); */
     padding-top: 20px;
+    /* padding-top: 7px; */
+    /* text-shadow: 2px 2px #ff0000; */
+    /* text-shadow: 0px 2px #a433a8; */
+    transform: rotate(-.1deg);
+    /* text-shadow: 1px -5px #ff0000; */
+    /* text-shadow: 20px 20px #ff0000; */
+    /* text-shadow: 0px 40px #ff0000; */
+    /* animation: 
+      blink-caret .5s step-end infinite; */
+    /* text-shadow: 0px 40px #ff00007e; */
     /* font-style: italic; */
     
 }
+
+
 
 @media only screen and (max-width:375px) {
     #header {
