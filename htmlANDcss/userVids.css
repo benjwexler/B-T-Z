@@ -1,0 +1,316 @@
+/* 
+* {
+    background: black;
+    z-index: -99;
+} */
+
+@keyframes blink-caret {
+    from, to { opacity: .99  }
+    50% { opacity: 1 }
+  }
+
+#header {
+    background: black;
+    background: linear-gradient(to bottom right, black 77%, #00d7d7 58%);
+    /* border: 10px dashed rgb(45, 114, 146); */
+    text-align: center;
+    height: 100px;
+    font-size: 36px;
+    font-family: 'Monoton', cursive;
+    /* align-content: center; */
+    color: rgb(0, 238, 255);
+    /* color: rgb(33, 136, 117); */
+    padding-top: 20px;
+    /* padding-top: 7px; */
+    /* text-shadow: 2px 2px #ff0000; */
+    /* text-shadow: 0px 2px #a433a8; */
+    transform: rotate(-.1deg);
+    /* text-shadow: 1px -5px #ff0000; */
+    /* text-shadow: 20px 20px #ff0000; */
+    /* text-shadow: 0px 40px #ff0000; */
+    /* animation: 
+      blink-caret .5s step-end infinite; */
+    /* text-shadow: 0px 40px #ff00007e; */
+    /* font-style: italic; */
+    
+}
+
+
+
+@media only screen and (max-width:375px) {
+    #header {
+        padding-top: 0px;
+    }
+}
+
+#title {
+    height: 50%;
+    width: 100%;
+    border: 2px solid white;
+    
+}
+
+#hi {
+    margin-top: 20%;
+    height: 100px;
+    border: 2px solid white;
+    justify-content: center;
+    color: rgb(0, 238, 255);
+    font-size: 30px;
+    font-family: 'Monoton', cursive;
+}
+
+#row1 {
+    /* border: 2px solid white; */
+    z-index: 99;
+    filter: blur(.5px);
+    /* margin-top: 5%; */
+    /* text-align: center; */
+    /* height: 10000px; */
+}
+
+#row2 {
+    /* border: 2px solid white; */
+    z-index: 99;
+    filter: blur(.5px);
+    /* margin-top: 5%; */
+    /* text-align: center; */
+    height: 40px;
+    /* border: .5px dashed black; */
+    margin: 0 auto 0 auto;
+    font-size: 25px;
+}
+
+#row3 {
+    /* border: 2px solid white; */
+    /* z-index: 99; */
+    /* filter: blur(.5px); */
+    /* margin-top: 5%; */
+    /* text-align: center; */
+    height: 300px;
+    /* border: .5px dashed black; */
+    /* margin-left: auto;
+    margin-right: auto; */
+    margin: 0 auto 0 auto;
+    /* padding-top: 50px; */
+}
+
+#row1:hover {
+    filter: blur(0px)
+}
+
+
+
+
+#test {
+    /* background: blue; */
+    text-align: center;
+    height: 100px;
+    margin: auto;
+    /* background-image: url('https://media.giphy.com/media/I6oOVy0GwvGiQ/giphy.gif');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover; */
+    color: black;
+    position: relative;
+    padding-top: 20px;
+}
+
+#submissionContainer  {
+    /* background: blue; */
+    text-align: center;
+    height: 600px;
+    margin: auto;
+    /* background-image: url('https://media.giphy.com/media/I6oOVy0GwvGiQ/giphy.gif');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover; */
+    /* color: black; */
+    position: relative;
+    border: 2px solid black;
+    overflow: auto;
+    
+}
+
+
+    
+
+
+#centered {
+    position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+border: 25px solid rgb(48, 24, 79);
+border: 25px solid rgba(65, 110, 145, 0.324);
+/* z-index: 99; */
+/* border: 3px solid white; */
+/* font-size: 50px; */
+}
+
+#backgroundImage {
+    height: 100%;
+    width: 100%;
+}
+
+  
+  /* DEMO-SPECIFIC STYLES */
+  .typewriter h1 {
+    color: black;
+    font-family: monospace;
+    overflow: hidden; /* Ensures the content is not revealed until the animation */
+    /* border-right: .15em solid orange; The typwriter cursor */
+    white-space: nowrap; /* Keeps the content on a single line */
+    margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+    letter-spacing: .15em; /* Adjust as needed */
+    animation: 
+      typing 3.5s steps(30, end),
+      blink-caret .5s step-end infinite;
+  }
+
+
+
+  .typewriter2 h1 {
+    color: #fff;
+    font-family: monospace;
+    overflow: hidden; /* Ensures the content is not revealed until the animation */
+    /* border-right: .15em solid orange; The typwriter cursor */
+    white-space: nowrap; /* Keeps the content on a single line */
+    margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+    letter-spacing: .15em; /* Adjust as needed */
+    animation: 
+      typing 3.5s steps(30, end),
+      blink-caret .5s step-end infinite;
+    animation-delay: 500ms;
+  }
+
+  .typewriter3 h1 {
+    color: #fff;
+    font-family: monospace;
+    overflow: hidden; /* Ensures the content is not revealed until the animation */
+    /* border-right: .15em solid orange; The typwriter cursor */
+    white-space: nowrap; /* Keeps the content on a single line */
+    margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+    letter-spacing: .15em; /* Adjust as needed */
+    animation: 
+      typing 3.5s steps(30, end),
+      blink-caret .5s step-end infinite;
+      animation-delay: 1000ms;
+  }
+  .typewriter4 h1 {
+    color: #fff;
+    font-family: monospace;
+    overflow: hidden; /* Ensures the content is not revealed until the animation */
+    /* border-right: .15em solid orange; The typwriter cursor */
+    white-space: nowrap; /* Keeps the content on a single line */
+    margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+    letter-spacing: .15em; /* Adjust as needed */
+    animation: 
+      typing 3.5s steps(30, end),
+      blink-caret .5s step-end infinite;
+      animation-delay: 1500ms;
+  }
+  
+  /* The typing effect */
+  @keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+  }
+  
+  /* The typewriter cursor effect */
+  /* @keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: orange }
+  } */
+
+  #signUp {
+      margin: auto;
+      text-align: center;
+      /* border: 50px solid white; */
+      /* padding: 50px; */
+  }
+
+  #adToSignUp {
+    margin: auto;
+    text-align: center;
+    /* border: 50px solid white; */
+
+}
+
+/* @media only screen and (max-width:375px) {
+    .h1, h1 {
+        font-size: 0.5rem;
+    }
+} */
+
+#signInButton {
+    position: absolute;
+    top: 700px;
+    left: 20px;
+}
+
+#signUpButton {
+    position: absolute;
+    top: 0;
+    left: 120px;
+}
+
+
+
+.dropdown-menu {
+    width: 500px;
+}
+
+.videoWrapper {
+	position: relative;
+	/* padding-bottom: 56.25%; */
+	/* padding-top: 25px; */
+    margin: auto;
+    height: 500px;
+    /* justify-content: center; */
+}
+.videoWrapper iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+    height: 60%;  
+}
+
+#seperator {
+    border: 5px dashed black;
+}
+
+#footer {
+    background: black;
+    height: 80px;
+    margin-top: 80px;
+    /* position: absolute;
+    bottom: 0; */
+}
+
+.footsy {
+    text-align: center;
+    margin: auto;
+    color: white;
+    font-family: monospace;
+}
+
+#signInButton {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    background-image: url('https://mdbootstrap.com/img/svg/hamburger3.svg?color=00FBD8');
+}
+
+#signUpButton {
+    position: absolute;
+    top: 0;
+    left: 120px;
+}
+
+
+
+.dropdown-menu {
+    width: 150px;
+}
