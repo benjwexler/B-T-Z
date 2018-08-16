@@ -61,24 +61,33 @@
             <span class="caret"></span>
         </button>
         <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+        <% if session[:user_id] == nil %>
             <li>
-                <a href="/Users/bwexler/Desktop/WDF/w09/producer_hub/htmlANDcss/signUp.html">Sign Up</a>
+                <a href="/signup">Sign Up</a>
             </li>
+        <%end%>
+        <% if session[:user_id] == nil %>
             <li>
-                <a href="/Users/bwexler/Desktop/WDF/w09/producer_hub/htmlANDcss/signIn.html">Log In</a>
+                <a href='/signin'>Log In</a>
             </li>
+            <%end%>
             <li>
-                <a href="/Users/bwexler/Desktop/WDF/w09/producer_hub/htmlANDcss/latestVids.html">All Videos</a>
+                <a href="/videos">All Videos</a>
             </li>
+
+            <% if session[:user_id] != nil %>
             <li>
                 <a href="/Users/bwexler/Desktop/WDF/w09/producer_hub/htmlANDcss/addVid.html">Add Video</a>
             </li>
+            <%end%>
             <li>
-                <a href="/Users/bwexler/Desktop/WDF/w09/producer_hub/htmlANDcss/allUsers.html">All Users</a>
+                <a href='/users'>All Users</a>
             </li>
+            <% if session[:user_id] != nil %>
             <li>
                 <a href="/Users/bwexler/Desktop/WDF/w09/producer_hub/htmlANDcss/editUser.html">Account Settings</a>
             </li>
+            <%end%>
         </ul>
     </div>
 

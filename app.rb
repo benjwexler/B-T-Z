@@ -12,13 +12,27 @@ set :port, 9503
 
 enable :sessions
 
+
+
 #Sign In Form Route
+# get '/signin' do
+#     if session[:user_id] == nil
+#         erb :sign_in
+#     else
+#         erb :signed_in_homepage
+#     end 
+# end
+
+# get '/signin' do
+    
+#         erb :sign_in
+    
+# end
+
 get '/signin' do
-    if session[:user_id] == nil
-        erb :sign_in
-    else
-        erb :signed_in_homepage
-    end 
+    
+    erb :new_sign_in
+
 end
 
 #Sign In Route
@@ -42,12 +56,18 @@ end
 
 #Sign Up Form Route
 
+# get '/signup' do 
+#     if session[:user_id] == nil 
+#     erb :sign_up
+#     else 
+#     erb :signed_in_homepage
+#     end 
+# end
+
 get '/signup' do 
-    if session[:user_id] == nil 
-    erb :sign_up
-    else 
-    erb :signed_in_homepage
-    end 
+    
+    erb :new_sign_up
+    
 end
 
 #Sign Up Route
@@ -69,18 +89,31 @@ post '/signup' do
     end 
 end
 
+# get '/' do
+#     if session[:user_id] 
+#         erb :signed_in_homepage
+#     else
+#         erb :signed_out_homepage
+#     end
+# end
+
 get '/' do
-    if session[:user_id] 
-        erb :signed_in_homepage
-    else
-        erb :signed_out_homepage
-    end
+    # session[:user_id] = 5
+    puts session[:user_id] == nil 
+    erb :new_homepage
+    
+
 end
 
 get '/users' do
     @users= User.all
     erb :users  
 end
+
+# get '/users' do
+#     @users= User.all
+#     erb :users  
+# end
 
 get '/users/:id' do
     if User.exists?(:id => params[:id])
@@ -118,9 +151,17 @@ get '/videos' do
 
     @videos = Video.all
     @user = User.all
-    erb :videos
+    erb :latest_submissions
     
 end
+
+# get '/videos' do
+
+#     @videos = Video.all
+#     @user = User.all
+#     erb :videos
+    
+# end
 
 get '/videos/new' do 
     if session[:user_id] 
