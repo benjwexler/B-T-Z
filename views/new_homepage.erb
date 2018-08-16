@@ -22,7 +22,7 @@
 
 
     </div>
-    <a href="/Users/bwexler/Desktop/WDF/w09/producer_hub/htmlANDcss/signUp.html">
+    <a href="/videos">
         <div class="container">
             <div id="test" class="row">
 
@@ -71,13 +71,19 @@
                 <a href='/signin'>Log In</a>
             </li>
             <%end%>
+
+            <% if session[:user_id] != nil %>
+            <li>
+                <a href="/signout">Log Out</a>
+            </li>
+            <%end%>
             <li>
                 <a href="/videos">All Videos</a>
             </li>
 
             <% if session[:user_id] != nil %>
             <li>
-                <a href="/Users/bwexler/Desktop/WDF/w09/producer_hub/htmlANDcss/addVid.html">Add Video</a>
+                <a href='/videos/new'>Add Video</a>
             </li>
             <%end%>
             <li>
@@ -85,7 +91,7 @@
             </li>
             <% if session[:user_id] != nil %>
             <li>
-                <a href="/Users/bwexler/Desktop/WDF/w09/producer_hub/htmlANDcss/editUser.html">Account Settings</a>
+                <a href='/users/<%=@specific_user.id%>/edit'>Account Settings</a>
             </li>
             <%end%>
         </ul>

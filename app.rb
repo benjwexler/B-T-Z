@@ -99,7 +99,11 @@ end
 
 get '/' do
     # session[:user_id] = 5
-    puts session[:user_id] == nil 
+    # puts session[:user_id] == nil
+    if User.exists?(:id => session[:user_id])
+        @specific_user = User.find(session[:user_id])
+    end 
+    puts session[:user_id]
     erb :new_homepage
     
 
@@ -107,12 +111,28 @@ end
 
 get '/users' do
     @users= User.all
-    erb :users  
+    if User.exists?(:id => session[:user_id])
+        @specific_user = User.find(session[:user_id])
+    end 
+    erb :new_all_users 
+    # erb :users 
 end
 
 # get '/users' do
 #     @users= User.all
 #     erb :users  
+# end
+
+# get '/users/:id' do
+#     if User.exists?(:id => params[:id])
+#         @specific_user = User.find(params[:id])
+
+#         @user_submissions = @specific_user.videos
+        
+#         erb :show_user
+#     else  
+#         redirect '/users'
+#     end
 # end
 
 get '/users/:id' do
@@ -121,31 +141,55 @@ get '/users/:id' do
 
         @user_submissions = @specific_user.videos
         
-        erb :show_user
+        erb :new_show_user_submissions
     else  
         redirect '/users'
     end
 end
 
+# get '/users/:id' do
+#     if User.exists?(:id => params[:id])
+#         @specific_user = User.find(params[:id])
+
+#         @user_submissions = @specific_user.videos
+        
+#         erb :show_user
+#     else  
+#         redirect '/users'
+#     end
+# end
+
 delete '/users/:id' do 
     @specific_user = User.find(params[:id])
     @specific_user.destroy
+    session[:user_id] = nil 
     redirect '/users'
 end
 
 get '/users/:id/edit' do
 
-    puts session[:user_id]
-    puts params[:id]
-    puts session[:user_id] && session[:user_id] == params[:id]
+    # puts session[:user_id]
+    # puts params[:id]
+    # puts session[:user_id] && session[:user_id] == params[:id]
+    @specific_user = User.find(session[:user_id])
     
-    if (session[:user_id]) && (session[:user_id] == params[:id].to_i)
-        @specific_user = User.find(params[:id])
-        erb :edit_user
-    else
-        erb :sign_up
-    end
+        erb :new_edit_user
+ 
 end
+
+# get '/users/:id/edit' do
+
+#     puts session[:user_id]
+#     puts params[:id]
+#     puts session[:user_id] && session[:user_id] == params[:id]
+    
+#     if (session[:user_id]) && (session[:user_id] == params[:id].to_i)
+#         @specific_user = User.find(params[:id])
+#         erb :edit_user
+#     else
+#         erb :sign_up
+#     end
+# end
 
 get '/videos' do
 
@@ -163,12 +207,20 @@ end
     
 # end
 
+# get '/videos/new' do 
+#     if session[:user_id] 
+#         erb :new_video
+#     else 
+#         erb :sign_in
+#     end 
+# end
+
 get '/videos/new' do 
-    if session[:user_id] 
-        erb :new_video
-    else 
-        erb :sign_in
-    end 
+    # if session[:user_id] 
+        erb :new_new_video
+    # else 
+    #     erb :sign_in
+    # end 
 end
 
 post '/videos' do

@@ -43,15 +43,15 @@
 
                     <form name="sign_up" action="/signup" method="post">
                         First Name:
-                        <input type="text" name="first_name" id="first_name" placeholder="First Name">
+                        <input type="text" name="first_name" id="first_name" placeholder="First Name" required>
                         <br> Last Name:
-                        <input type="text" name="last_name" id="last_name" placeholder="Last Name">
+                        <input type="text" name="last_name" id="last_name" placeholder="Last Name" required>
                         <br> Username:
-                        <input type="text" name="username" id="username" placeholder="Username">
+                        <input type="text" name="username" id="username" placeholder="Username" required>
                         <br> Email:
-                        <input type="email" name="email" id="email" placeholder="Email">
+                        <input type="email" name="email" id="email" placeholder="Email" required>
                         <br> Password:
-                        <input type="password" name="password" id="password" placeholder="Password">
+                        <input type="password" name="password" id="password" placeholder="Password" required>
                         <br> Birthday:
 
                         <select name="birth_month">
@@ -72,20 +72,20 @@
 
 
                         <select name="birth_day">
-
-                            <option value="11">
-                                11
-                            </option>
-
+                        <% i=1 %>
+                        <% while i<32 %>
+                          <option value="<%=i%>"><%=i%></option>
+                          <%i+=1%>
+                      <%end%>
                         </select>
 
                         <select name="birth_year">
-
-                            <option value="1989">
-                                1989
-                            </option>
-
-                        </select>
+  <% i=Date.today.year %>
+  <% while i>1903 %>
+    <option value="<%=i%>"><%=i%></option>
+    <%i-=1%>
+<%end%>
+  </select>
                         <br>
                         <input id="signUpButton" type="submit" value="Go">
                     </form>
@@ -97,44 +97,49 @@
         <div id="footer" class="container-fluid">
             <div class="row">
                 <div class="col-sm-12 footsy">
-                    Sign Up ----
-                    <!-- <br> -->
-                    Log In
+                Creator: Ben Wexler
                 </div>
                 <!-- <div class="col-sm-3 footsy">
                     Hi
                 </div> -->
             </div>
         </div>
-
-
+        
         <div id="signInButton" class="dropdown">
-            <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true"
-                aria-expanded="true">
-                <i class="fas fa-bars"></i>
-                <span class="caret"></span>
-            </button>
-            <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                <li>
-                    <a href="/Users/bwexler/Desktop/WDF/w09/producer_hub/htmlANDcss/signUp.html">Sign Up</a>
-                </li>
-                <li>
-                    <a href="/Users/bwexler/Desktop/WDF/w09/producer_hub/htmlANDcss/signIn.html">Log In</a>
-                </li>
-                <li>
-                    <a href="/Users/bwexler/Desktop/WDF/w09/producer_hub/htmlANDcss/latestVids.html">All Videos</a>
-                </li>
-                <li>
-                    <a href="/Users/bwexler/Desktop/WDF/w09/producer_hub/htmlANDcss/addVid.html">Add Video</a>
-                </li>
-                <li>
-                    <a href="/Users/bwexler/Desktop/WDF/w09/producer_hub/htmlANDcss/allUsers.html">All Users</a>
-                </li>
-                <li>
-                    <a href="/Users/bwexler/Desktop/WDF/w09/producer_hub/htmlANDcss/editUser.html">Account Settings</a>
-                </li>
-            </ul>
-        </div>
+        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true"
+            aria-expanded="true">
+            <i class="fas fa-bars"></i>
+            <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+       
+        <% if session[:user_id] == nil %>
+            <li>
+                <a href='/signin'>Log In</a>
+            </li>
+            <%end%>
+            <li>
+                <a href="/videos">All Videos</a>
+            </li>
+
+            <% if session[:user_id] != nil %>
+            <li>
+                <a href='/videos/new'>Add Video</a>
+            </li>
+            <%end%>
+            <li>
+                <a href='/users'>All Users</a>
+            </li>
+            <% if session[:user_id] != nil %>
+            <li>
+                <a href='/users/:id/edit'>Account Settings</a>
+            </li>
+            <%end%>
+        </ul>
+    </div>
+
+
+        
 
 
 

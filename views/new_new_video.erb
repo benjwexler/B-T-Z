@@ -2,34 +2,31 @@
 <html lang="en">
 
 <head>
-    <!-- Required meta tags -->
+
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Bootstrap CSS -->
+
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
         crossorigin="anonymous">
-    <link rel="stylesheet" href="signIn.css">
+    <link rel="stylesheet" href="<%= url('addVid.css')%>">
     <link href="https://fonts.googleapis.com/css?family=Monoton" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
-    <title>Sign In</title>
+    <title>Add Video</title>
 </head>
 
 <body>
     <div id="header" class="container-fluid">
-        <!-- <div id="title">
-
-            Producer Hub
-         </div> -->
+     
         <h1>B*t*z</h1>
-        <!-- <h1>Producer Hub</h1> -->
+    
 
     </div>
     <div class="container">
         <div id="test" class="row">
             <div id="row1" class="col-sm-12 ">
                 <div class="typewriter">
-                    <h1>Log In</h1>
+                    <h1>Submit Video</h1>
                 </div>
             </div>
         </div>
@@ -41,15 +38,29 @@
             <div class="row">
                 <div id="signUp" class="col-sm-12">
 
-                        <form action="/signin" method="post">
-                            Username:
-                            <input type="text" name="username" id="username" placeholder="Username" required>
+                        <form method="POST" action="/videos"> 
+                            Song Name:
+                            <input type="text" name="song_name" placeholder="Enter song name">
                             <br>
-                            Password:
-                            <input type="password" name="password" id="password" placeholder="Password" required>
+                            Artist Name:
+                            <input type="text" name="artist_name"  placeholder="Enter artist_name">  
                             <br>
-                            <input type="submit" value="Go">
-                          </form>
+                            Producer Name:
+                            <input type="text" name="producer_name" placeholder="Producer name"> 
+                            <br>
+                            Youtube Link:
+                            <input type="text" name="video_url" placeholder="Enter video_url"> 
+                            <br>
+                            <select name="genre">
+                                <option value="Hip-Hop">Hip-Hop</option>
+                                <option value="Rock">Rock</option>
+                                <option value="Electronic">Electronic</option>
+                                <option value="Other">Other</option>
+                              </select>
+                            
+                            <input type="submit" value="Submit">
+                            </form>
+                        
                    
                 </div>
 
@@ -61,12 +72,9 @@
                 <div class="col-sm-12 footsy">
                 Creator: Ben Wexler
                 </div>
-                <!-- <div class="col-sm-3 footsy">
-                    Hi
-                </div> -->
+               
             </div>
         </div>
-
 
 
         <div id="signInButton" class="dropdown">
@@ -81,7 +89,17 @@
                 <a href="/signup">Sign Up</a>
             </li>
         <%end%>
-      
+        <% if session[:user_id] == nil %>
+            <li>
+                <a href='/signin'>Log In</a>
+            </li>
+            <%end%>
+
+            <% if session[:user_id] != nil %>
+            <li>
+                <a href="/signout">Log Out</a>
+            </li>
+            <%end%>
             <li>
                 <a href="/videos">All Videos</a>
             </li>
@@ -108,8 +126,7 @@
 
 
 
-        <!-- Optional JavaScript -->
-        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
             crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"

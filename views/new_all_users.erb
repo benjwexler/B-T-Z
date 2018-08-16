@@ -9,12 +9,11 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
         crossorigin="anonymous">
-    <link rel="stylesheet" href="signIn.css">
+    <link rel="stylesheet" href="allUsers.css">
     <link href="https://fonts.googleapis.com/css?family=Monoton" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
-    <title>Sign In</title>
+    <title>All Users</title>
 </head>
-
 <body>
     <div id="header" class="container-fluid">
         <!-- <div id="title">
@@ -29,7 +28,7 @@
         <div id="test" class="row">
             <div id="row1" class="col-sm-12 ">
                 <div class="typewriter">
-                    <h1>Log In</h1>
+                    <h1>All Users</h1>
                 </div>
             </div>
         </div>
@@ -41,15 +40,11 @@
             <div class="row">
                 <div id="signUp" class="col-sm-12">
 
-                        <form action="/signin" method="post">
-                            Username:
-                            <input type="text" name="username" id="username" placeholder="Username" required>
-                            <br>
-                            Password:
-                            <input type="password" name="password" id="password" placeholder="Password" required>
-                            <br>
-                            <input type="submit" value="Go">
-                          </form>
+                        
+                <% @users.each do |single_user| %> 
+                    <h1> <a href="/users/<%=single_user.id%>"><%= single_user.username %> </a> </h1>
+                <% end %>
+                        
                    
                 </div>
 
@@ -68,7 +63,6 @@
         </div>
 
 
-
         <div id="signInButton" class="dropdown">
         <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true"
             aria-expanded="true">
@@ -81,7 +75,17 @@
                 <a href="/signup">Sign Up</a>
             </li>
         <%end%>
-      
+        <% if session[:user_id] == nil %>
+            <li>
+                <a href='/signin'>Log In</a>
+            </li>
+            <%end%>
+
+            <% if session[:user_id] != nil %>
+            <li>
+                <a href="/signout">Log Out</a>
+            </li>
+            <%end%>
             <li>
                 <a href="/videos">All Videos</a>
             </li>
@@ -96,7 +100,7 @@
             </li>
             <% if session[:user_id] != nil %>
             <li>
-                <a href='/users/:id/edit'>Account Settings</a>
+                <a href='/users/<%=session[:user_id]%>/edit'>Account Settings</a>
             </li>
             <%end%>
         </ul>
