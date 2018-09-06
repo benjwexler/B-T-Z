@@ -1,5 +1,3 @@
-<h1> B*T*Z </h1> 
-
 <img src="B*T*Z Screenshot.png">
 
 B*T*Z is a website that showcases videos of music producers shewoing how they made the beats to popular songs.  
