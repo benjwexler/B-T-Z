@@ -14,3 +14,5 @@ Create a fullstack simple blog website that enables someone to sign up for an ac
 
 <h3> Skills utilized: </h3>
 <li> Regex: Obtain Youtube ID based off of Youtube URL </li>
+
+https://github.com/benjwexler/beatz/issues/1
