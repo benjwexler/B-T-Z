@@ -12,6 +12,7 @@ Create a fullstack simple blog website that enables someone to sign up for an ac
 <h3> Built with: </h3>
 
 <li> Ruby/Sinatra </li>
+<li> Bootstrap </li>
 <li> Postgresql </li>
 <li> ActiveRecord </li>
 
