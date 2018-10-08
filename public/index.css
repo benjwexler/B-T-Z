@@ -264,6 +264,7 @@
 
 #hamburger {
   z-index: 9999;
+  -webkit-font-smoothing: auto;
 }
 
 #signUpButton {
