@@ -3,6 +3,7 @@
   min-width: 100px;
   padding-left: 10px;
   color: black !important;
+  z-index: 99999;
 }
 
 #submissionContainer {
