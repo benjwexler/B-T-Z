@@ -259,6 +259,7 @@
   top: 0px;
   left: 0px;
   opacity: .9;
+  z-index: 9999;
   /* background-color: black; */
 }
 
