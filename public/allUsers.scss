@@ -119,6 +119,7 @@
 #submissionContainer  {
     /* background: blue; */
     text-align: center;
+    min-height: 600px;
     height: 600px;
     margin: auto;
     /* background-image: url('https://media.giphy.com/media/I6oOVy0GwvGiQ/giphy.gif');
@@ -128,8 +129,26 @@
     /* color: black; */
     position: relative;
     border: 2px solid black;
+   
     overflow: auto;
     
+}
+
+@media only screen and (max-width: 414px) {
+    #submissionContainer {
+        height: auto;
+        overflow: visible;
+    }
+
+    #sectionTitle {
+        font-size: 1.8rem !important;
+
+       
+    }
+
+    #mainContainerSection {
+        margin-top: -30px;
+    }
 }
 
 
@@ -318,9 +337,7 @@ border: 25px solid rgba(65, 110, 145, 0.324);
     color: black;
 }
 
-dropdownMenu1 {
-    color: black; 
-}
+
 
 .allUserText {
     color: black;

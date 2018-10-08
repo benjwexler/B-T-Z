@@ -269,29 +269,6 @@
   left: 120px;
 }
 
-.dropdown-menu {
-  width: 10px;
-  min-width: 100px;
-  padding-left: 10px;
-  color: black;
-}
-
-a:link {
-  text-decoration: none;
-}
-
-a:visited {
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: none;
-}
-
-a:active {
-  text-decoration: none;
-}
-
 #footer {
   background: black;
   height: 50px;
