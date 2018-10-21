@@ -215,8 +215,10 @@ border: 25px solid rgba(65, 110, 145, 0.324);
     position: absolute;
     top: 0px;
     left: 0px;
-    background-image: url('https://mdbootstrap.com/img/svg/hamburger3.svg?color=00FBD8');
+    // background-image: url('https://mdbootstrap.com/img/svg/hamburger3.svg?color=00FBD8');
     opacity: .9;
+    background: white;
+    border-bottom-right-radius: 40%;
     
     /* background-color: black; */
 }
@@ -224,6 +226,7 @@ border: 25px solid rgba(65, 110, 145, 0.324);
 #hamburger {
     z-index: 9999;
     -webkit-font-smoothing: auto;
+    color: #00d7d7;
 }
 
 #signUpButton {
