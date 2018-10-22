@@ -324,7 +324,6 @@
   position: absolute;
   top: 0px;
   left: 0px;
-  background-image: url("https://mdbootstrap.com/img/svg/hamburger3.svg?color=00FBD8");
 }
 
 #signUpButton {
@@ -337,6 +336,22 @@
   width: 10px;
   min-width: 100px;
   padding-left: 10px;
+  color: black;
+}
+
+#signInButton {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  opacity: .9;
+  background: white;
+  border-bottom-right-radius: 40%;
+  /* background-color: black; */
+}
+
+#hamburger {
+  z-index: 9999;
+  -webkit-font-smoothing: auto;
   color: black;
 }
 /*# sourceMappingURL=userVids.css.map */

@@ -33,4 +33,20 @@ a:active {
   text-decoration: none;
   color: black !important;
 }
+
+#signInButton {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  opacity: .9;
+  background: white;
+  border-bottom-right-radius: 40%;
+  /* background-color: black; */
+}
+
+#hamburger {
+  z-index: 9999;
+  -webkit-font-smoothing: auto;
+  color: black;
+}
 /*# sourceMappingURL=linkFix.css.map */
