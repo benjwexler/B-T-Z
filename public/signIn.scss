@@ -294,12 +294,7 @@ border: 25px solid rgba(65, 110, 145, 0.324);
     font-family: monospace;
 }
 
-#signInButton {
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    background-image: url('https://mdbootstrap.com/img/svg/hamburger3.svg?color=00FBD8');
-}
+
 
 #signUpButton {
     position: absolute;
@@ -314,4 +309,22 @@ border: 25px solid rgba(65, 110, 145, 0.324);
     min-width: 100px;
     padding-left: 10px;
     color: black;
+}
+
+#signInButton {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    // background-image: url('https://mdbootstrap.com/img/svg/hamburger3.svg?color=00FBD8');
+    opacity: .9;
+    background: white;
+    border-bottom-right-radius: 40%;
+    
+    /* background-color: black; */
+}
+
+#hamburger {
+    z-index: 9999;
+    -webkit-font-smoothing: auto;
+    color: #00d7d7;
 }
